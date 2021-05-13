@@ -4,7 +4,7 @@ This package provides a Postman Collection to be used with the `rippled` XRP Led
 
 Example request bodies are used from [https://xrpl.org/rippled-api.html](https://xrpl.org/rippled-api.html).
 
-![](rippled_request_account_info.png)
+![](docs/rippled_request_account_info.png)
 
 ## Usage
 
