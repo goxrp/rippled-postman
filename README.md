@@ -46,3 +46,34 @@ This package provides a Postman Collection to be used with the `rippled` XRP Led
     - [ ] ~`json` - Pass JSON through the commandline.~ (commandline only)
 	- [x] `ping` - Confirm connectivity with the server.
     - [x] `random` - Generate a random number.
+- [ ] Admin rippled Methods
+  - Key Generation Methods
+    - [ ] `validation_create` - Generate keys for a new rippled validator.
+    - [ ] `wallet_propose` - Generate keys for a new account.
+  - [ ] Logging and Data Management Methods: Use these methods to manage log levels and other data, such as ledgers.
+    - [ ] `can_delete` - Allow online deletion of ledgers up to a specific ledger.
+    - [ ] `crawl_shards` - Request information about which history shards peers have.
+    - [ ] `download_shard` - Download a specific shard of ledger history.
+    - [ ] `ledger_cleaner` - Configure the ledger cleaner service to check for corrupted data.
+    - [ ] `ledger_request` - Query peer servers for a specific ledger version.
+    - [ ] `log_level` - Get or modify log verbosity.
+    - [ ] `logrotate` - Reopen the log file.
+  - [ ] Server Control Methods - Use these methods to manage the rippled server.
+    - [ ] `ledger_accept` - Close and advance the ledger in stand-alone mode.
+    - [ ] `stop` - Shut down the rippled server.
+    - [ ] `validation_seed` - (Obsolete) Temporarily set key to be used for validating.
+  - [ ] Peer Management Methods - Use these methods to manage your server's peer-to-peer connections.
+    - [ ] `connect` - Force the rippled server to connect to a specific peer.
+    - [ ] `peer_reservations_add` - Add a reserved slot for a specific peer server.
+    - [ ] `peer_reservations_del` - Remove a reserved slot for a specific peer server.
+    - [ ] `peer_reservations_list` - List reserved slots for specific peer servers.
+    - [ ] `peers` - Get information about the peer servers connected.
+  - [x] Status and Debugging Methods - Use these methods to check the status of the network and server.
+    - [x] `consensus_info` - Get information about the state of consensus as it happens.
+    - [x] `feature` - Get information about protocol amendments.
+    - [x] `fetch_info` - Get information about the server's sync with the network.
+    - [x] `get_counts` - Get statistics about the server's internals and memory usage.
+    - [ ] ~`print` - Get information about internal subsystems.~ (websocket and command line only)
+    - [x] `validator_info` - Get the server's validation settings, if configured as a validator.
+    - [x] `validator_list_sites` - Get information about sites that publish validator lists.
+    - [x] `validators` - Get information about the current validators.
