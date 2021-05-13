@@ -2,7 +2,8 @@
 
 This project provides [a Postman Collection](rippled_postman_collection.json)  to be used with the `rippled` XRP Ledger server's JSON-RPC API.
 
-Example request bodies are used from [https://xrpl.org/rippled-api.html](https://xrpl.org/rippled-api.html).
+* Example request bodies are used from [https://xrpl.org/](https://xrpl.org/rippled-api.html) to get started easily.
+* JSON-RPC server URL is implemented in a Postman evironment variable so you can use it with any `rippled` server you want.
 
 ![](docs/rippled_request_account_info.png)
 
@@ -15,7 +16,7 @@ Example request bodies are used from [https://xrpl.org/rippled-api.html](https:/
 ## Status
 
 1. Many of the Public Read APIs hvae been implemented already
-1. Trasaction APIs still need to be completed
+1. Transaction APIs still need to be completed
 1. Polymorphic APIs still need to be completed, e.g. `account_objects`, `ledger_entry`
 1. Admin APIs still need to be completed
 
