@@ -29,10 +29,10 @@ This package provides a Postman Collection to be used with the `rippled` XRP Led
     - [ ] `transaction_entry` - Retrieve info about a transaction from a particular ledger version.
     - [ ] `tx` - Retrieve info about a transaction from all the ledgers on hand.
     - [ ] `tx_history` - Retrieve info about all recent transactions.
-  - [ ] Path and Order Book Methods
+  - [x] Path and Order Book Methods
     - [x] `book_offers` - Get info about offers to exchange two currencies.
     - [x] `deposit_authorized` - Check whether an account is authorized to send money directly to another.
-    - [ ] `path_find` - Find a path for a payment between two accounts and receive updates. (websocket only)
+    - [ ] ~`path_find` - Find a path for a payment between two accounts and receive updates. (websocket only)~
     - [x] `ripple_path_find` - Find a path for payment between two accounts, once.
   - [ ] Payment Channel Methods
     - [ ] `channel_authorize` - Sign a claim for money from a payment channel.
@@ -43,6 +43,6 @@ This package provides a Postman Collection to be used with the `rippled` XRP Led
     - [x] `server_info` - Retrieve status of the server in human-readable format.
     - [x] `server_state` - Retrieve status of the server in machine-readable format.
   - [x] utility Methods
-    - [ ] ~`json` - Pass JSON through the commandline.~
+    - [ ] ~`json` - Pass JSON through the commandline.~ (commandline only)
 	- [x] `ping` - Confirm connectivity with the server.
     - [x] `random` - Generate a random number.
