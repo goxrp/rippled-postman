@@ -1,7 +1,7 @@
 {
     "info": {
         "name": "Rippled JSON RPC API",
-        "description": "Postman Collection for Rippled APIs",
+        "description": "Postman Collection for Rippled APIs. Set environment variable RIPPLED_JSONRPC_URL to `https://xrpl.ws`, `https://s1.ripple.com:51234` or another host.",
         "version": "",
         "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
     },
@@ -16,14 +16,10 @@
                             "name": "account_channels",
                             "request": {
                                 "url": {
-                                    "raw": "https://s1.ripple.com:51234",
-                                    "protocol": "https",
+                                    "raw": "{{RIPPLED_JSONRPC_URL}}",
                                     "host": [
-                                        "s1",
-                                        "ripple",
-                                        "com"
-                                    ],
-                                    "port": "51234"
+                                        "{{RIPPLED_JSONRPC_URL}}"
+                                    ]
                                 },
                                 "method": "POST",
                                 "description": "The `account_channels` method returns information about an account's Payment Channels. This includes only channels where the specified account is the channel's source, not the destination. (A channel's \"source\" and \"owner\" are the same.) All information retrieved is relative to a particular version of the ledger.",
@@ -37,14 +33,10 @@
                             "name": "account_currencies",
                             "request": {
                                 "url": {
-                                    "raw": "https://s1.ripple.com:51234",
-                                    "protocol": "https",
+                                    "raw": "{{RIPPLED_JSONRPC_URL}}",
                                     "host": [
-                                        "s1",
-                                        "ripple",
-                                        "com"
-                                    ],
-                                    "port": "51234"
+                                        "{{RIPPLED_JSONRPC_URL}}"
+                                    ]
                                 },
                                 "method": "POST",
                                 "description": "The `account_currencies` command retrieves a list of currencies that an account can send or receive, based on its trust lines. (This is not a thoroughly confirmed list, but it can be used to populate user interfaces.)",
@@ -58,14 +50,10 @@
                             "name": "account_info",
                             "request": {
                                 "url": {
-                                    "raw": "https://s1.ripple.com:51234",
-                                    "protocol": "https",
+                                    "raw": "{{RIPPLED_JSONRPC_URL}}",
                                     "host": [
-                                        "s1",
-                                        "ripple",
-                                        "com"
-                                    ],
-                                    "port": "51234"
+                                        "{{RIPPLED_JSONRPC_URL}}"
+                                    ]
                                 },
                                 "method": "POST",
                                 "description": "The `account_info` command retrieves information about an account, its activity, and its XRP balance. All information retrieved is relative to a particular version of the ledger.",
@@ -79,14 +67,10 @@
                             "name": "account_lines",
                             "request": {
                                 "url": {
-                                    "raw": "https://s1.ripple.com:51234",
-                                    "protocol": "https",
+                                    "raw": "{{RIPPLED_JSONRPC_URL}}",
                                     "host": [
-                                        "s1",
-                                        "ripple",
-                                        "com"
-                                    ],
-                                    "port": "51234"
+                                        "{{RIPPLED_JSONRPC_URL}}"
+                                    ]
                                 },
                                 "method": "POST",
                                 "description": "The `account_lines` method returns information about an account's trust lines, including balances in all non-XRP currencies and assets. All information retrieved is relative to a particular version of the ledger.",
@@ -100,14 +84,10 @@
                             "name": "account_offers",
                             "request": {
                                 "url": {
-                                    "raw": "https://s1.ripple.com:51234",
-                                    "protocol": "https",
+                                    "raw": "{{RIPPLED_JSONRPC_URL}}",
                                     "host": [
-                                        "s1",
-                                        "ripple",
-                                        "com"
-                                    ],
-                                    "port": "51234"
+                                        "{{RIPPLED_JSONRPC_URL}}"
+                                    ]
                                 },
                                 "method": "POST",
                                 "description": "The `account_offers` method retrieves a list of [offers](https://xrpl.org/offers.html) made by a given [account](https://xrpl.org/accounts.html) that are outstanding as of a particular [ledger version](https://xrpl.org/ledgers.html).",
@@ -121,14 +101,10 @@
                             "name": "account_tx",
                             "request": {
                                 "url": {
-                                    "raw": "https://s1.ripple.com:51234",
-                                    "protocol": "https",
+                                    "raw": "{{RIPPLED_JSONRPC_URL}}",
                                     "host": [
-                                        "s1",
-                                        "ripple",
-                                        "com"
-                                    ],
-                                    "port": "51234"
+                                        "{{RIPPLED_JSONRPC_URL}}"
+                                    ]
                                 },
                                 "method": "POST",
                                 "description": "The `account_tx` method retrieves a list of transactions that involved the specified account.",
@@ -142,14 +118,10 @@
                             "name": "gateway_balances",
                             "request": {
                                 "url": {
-                                    "raw": "https://s1.ripple.com:51234",
-                                    "protocol": "https",
+                                    "raw": "{{RIPPLED_JSONRPC_URL}}",
                                     "host": [
-                                        "s1",
-                                        "ripple",
-                                        "com"
-                                    ],
-                                    "port": "51234"
+                                        "{{RIPPLED_JSONRPC_URL}}"
+                                    ]
                                 },
                                 "method": "POST",
                                 "description": "The `gateway_balances` command calculates the total balances issued by a given account, optionally excluding amounts held by [operational addresses](https://xrpl.org/issuing-and-operational-addresses.html).",
@@ -163,14 +135,10 @@
                             "name": "noripple_check",
                             "request": {
                                 "url": {
-                                    "raw": "https://s1.ripple.com:51234",
-                                    "protocol": "https",
+                                    "raw": "{{RIPPLED_JSONRPC_URL}}",
                                     "host": [
-                                        "s1",
-                                        "ripple",
-                                        "com"
-                                    ],
-                                    "port": "51234"
+                                        "{{RIPPLED_JSONRPC_URL}}"
+                                    ]
                                 },
                                 "method": "POST",
                                 "description": "The `noripple_check` command provides a quick way to check the status of [the Default Ripple field for an account and the No Ripple flag of its trust lines](https://xrpl.org/rippling.html), compared with the recommended settings.",
@@ -189,14 +157,10 @@
                             "name": "ledger",
                             "request": {
                                 "url": {
-                                    "raw": "https://s1.ripple.com:51234",
-                                    "protocol": "https",
+                                    "raw": "{{RIPPLED_JSONRPC_URL}}",
                                     "host": [
-                                        "s1",
-                                        "ripple",
-                                        "com"
-                                    ],
-                                    "port": "51234"
+                                        "{{RIPPLED_JSONRPC_URL}}"
+                                    ]
                                 },
                                 "method": "POST",
                                 "description": "Retrieve information about the public [ledger](https://xrpl.org/ledgers.html).",
@@ -210,14 +174,10 @@
                             "name": "ledger_closed",
                             "request": {
                                 "url": {
-                                    "raw": "https://s1.ripple.com:51234",
-                                    "protocol": "https",
+                                    "raw": "{{RIPPLED_JSONRPC_URL}}",
                                     "host": [
-                                        "s1",
-                                        "ripple",
-                                        "com"
-                                    ],
-                                    "port": "51234"
+                                        "{{RIPPLED_JSONRPC_URL}}"
+                                    ]
                                 },
                                 "method": "POST",
                                 "description": "The `ledger_closed` method returns the unique identifiers of the most recently closed ledger. (This ledger is not necessarily validated and immutable yet.)",
@@ -231,14 +191,10 @@
                             "name": "ledger_current",
                             "request": {
                                 "url": {
-                                    "raw": "https://s1.ripple.com:51234",
-                                    "protocol": "https",
+                                    "raw": "{{RIPPLED_JSONRPC_URL}}",
                                     "host": [
-                                        "s1",
-                                        "ripple",
-                                        "com"
-                                    ],
-                                    "port": "51234"
+                                        "{{RIPPLED_JSONRPC_URL}}"
+                                    ]
                                 },
                                 "method": "POST",
                                 "description": "The ledger_current method returns the unique identifiers of the current in-progress [ledger](https://xrpl.org/ledgers.html). This command is mostly useful for testing, because the ledger returned is still in flux.",
@@ -252,14 +208,10 @@
                             "name": "ledger_data",
                             "request": {
                                 "url": {
-                                    "raw": "https://s1.ripple.com:51234",
-                                    "protocol": "https",
+                                    "raw": "{{RIPPLED_JSONRPC_URL}}",
                                     "host": [
-                                        "s1",
-                                        "ripple",
-                                        "com"
-                                    ],
-                                    "port": "51234"
+                                        "{{RIPPLED_JSONRPC_URL}}"
+                                    ]
                                 },
                                 "method": "POST",
                                 "description": "The `ledger_data` method retrieves contents of the specified ledger. You can iterate through several calls to retrieve the entire contents of a single ledger version.",
@@ -278,14 +230,10 @@
                             "name": "book_offers",
                             "request": {
                                 "url": {
-                                    "raw": "https://s1.ripple.com:51234",
-                                    "protocol": "https",
+                                    "raw": "{{RIPPLED_JSONRPC_URL}}",
                                     "host": [
-                                        "s1",
-                                        "ripple",
-                                        "com"
-                                    ],
-                                    "port": "51234"
+                                        "{{RIPPLED_JSONRPC_URL}}"
+                                    ]
                                 },
                                 "method": "POST",
                                 "description": "The `book_offers` method retrieves a list of offers, also known as the [order book](https://www.investopedia.com/terms/o/order-book.asp), between two currencies.",
@@ -299,14 +247,10 @@
                             "name": "deposit_authorized",
                             "request": {
                                 "url": {
-                                    "raw": "https://s1.ripple.com:51234",
-                                    "protocol": "https",
+                                    "raw": "{{RIPPLED_JSONRPC_URL}}",
                                     "host": [
-                                        "s1",
-                                        "ripple",
-                                        "com"
-                                    ],
-                                    "port": "51234"
+                                        "{{RIPPLED_JSONRPC_URL}}"
+                                    ]
                                 },
                                 "method": "POST",
                                 "description": "The `deposit_authorized` command indicates whether one account is authorized to send payments directly to another. See [Deposit Authorization](https://xrpl.org/depositauth.html) for information on how to require authorization to deliver money to your account.",
@@ -320,14 +264,10 @@
                             "name": "ripple_path_find",
                             "request": {
                                 "url": {
-                                    "raw": "https://s1.ripple.com:51234",
-                                    "protocol": "https",
+                                    "raw": "{{RIPPLED_JSONRPC_URL}}",
                                     "host": [
-                                        "s1",
-                                        "ripple",
-                                        "com"
-                                    ],
-                                    "port": "51234"
+                                        "{{RIPPLED_JSONRPC_URL}}"
+                                    ]
                                 },
                                 "method": "POST",
                                 "description": "The `ripple_path_find` method is a simplified version of the [`path_find` method](https://xrpl.org/path_find.html) that provides a single response with a [payment path](https://xrpl.org/paths.html) you can use right away. It is available in both the WebSocket and JSON-RPC APIs. However, the results tend to become outdated as time passes. Instead of making multiple calls to stay updated, you should instead use the [`path_find` method](https://xrpl.org/path_find.html) to subscribe to continued updates where possible.\n\nAlthough the `rippled` server tries to find the cheapest path or combination of paths for making a payment, it is not guaranteed that the paths returned by this method are, in fact, the best paths.",
@@ -346,14 +286,10 @@
                             "name": "fee",
                             "request": {
                                 "url": {
-                                    "raw": "https://s1.ripple.com:51234",
-                                    "protocol": "https",
+                                    "raw": "{{RIPPLED_JSONRPC_URL}}",
                                     "host": [
-                                        "s1",
-                                        "ripple",
-                                        "com"
-                                    ],
-                                    "port": "51234"
+                                        "{{RIPPLED_JSONRPC_URL}}"
+                                    ]
                                 },
                                 "method": "POST",
                                 "description": "The `fee` command reports the current state of the open-ledger requirements for the [transaction cost](https://xrpl.org/transaction-cost.html). This requires the FeeEscalation amendment to be enabled.",
@@ -367,14 +303,10 @@
                             "name": "manifest",
                             "request": {
                                 "url": {
-                                    "raw": "https://s1.ripple.com:51234",
-                                    "protocol": "https",
+                                    "raw": "{{RIPPLED_JSONRPC_URL}}",
                                     "host": [
-                                        "s1",
-                                        "ripple",
-                                        "com"
-                                    ],
-                                    "port": "51234"
+                                        "{{RIPPLED_JSONRPC_URL}}"
+                                    ]
                                 },
                                 "method": "POST",
                                 "description": "The `manifest` method reports the current \"manifest\" information for a given validator public key. The \"manifest\" is the public portion of that validator's configured token.",
@@ -388,14 +320,10 @@
                             "name": "server_info",
                             "request": {
                                 "url": {
-                                    "raw": "https://s1.ripple.com:51234",
-                                    "protocol": "https",
+                                    "raw": "{{RIPPLED_JSONRPC_URL}}",
                                     "host": [
-                                        "s1",
-                                        "ripple",
-                                        "com"
-                                    ],
-                                    "port": "51234"
+                                        "{{RIPPLED_JSONRPC_URL}}"
+                                    ]
                                 },
                                 "method": "POST",
                                 "description": "The `server_info` command asks the server for a human-readable version of various information about the rippled server being queried.",
@@ -409,14 +337,10 @@
                             "name": "server_state",
                             "request": {
                                 "url": {
-                                    "raw": "https://s1.ripple.com:51234",
-                                    "protocol": "https",
+                                    "raw": "{{RIPPLED_JSONRPC_URL}}",
                                     "host": [
-                                        "s1",
-                                        "ripple",
-                                        "com"
-                                    ],
-                                    "port": "51234"
+                                        "{{RIPPLED_JSONRPC_URL}}"
+                                    ]
                                 },
                                 "method": "POST",
                                 "description": "The `server_state` command asks the server for various machine-readable information about the rippled server's current state. The response is almost the same as the [`server_info` method](https://xrpl.org/server_info.html), but uses units that are easier to process instead of easier to read. (For example, XRP values are given in integer drops instead of scientific notation or decimal values, and time is given in milliseconds instead of seconds.)",
@@ -435,14 +359,10 @@
                             "name": "ping",
                             "request": {
                                 "url": {
-                                    "raw": "https://s1.ripple.com:51234",
-                                    "protocol": "https",
+                                    "raw": "{{RIPPLED_JSONRPC_URL}}",
                                     "host": [
-                                        "s1",
-                                        "ripple",
-                                        "com"
-                                    ],
-                                    "port": "51234"
+                                        "{{RIPPLED_JSONRPC_URL}}"
+                                    ]
                                 },
                                 "method": "POST",
                                 "description": "The `ping` command returns an acknowledgement, so that clients can test the connection status and latency.",
@@ -456,14 +376,10 @@
                             "name": "random",
                             "request": {
                                 "url": {
-                                    "raw": "https://s1.ripple.com:51234",
-                                    "protocol": "https",
+                                    "raw": "{{RIPPLED_JSONRPC_URL}}",
                                     "host": [
-                                        "s1",
-                                        "ripple",
-                                        "com"
-                                    ],
-                                    "port": "51234"
+                                        "{{RIPPLED_JSONRPC_URL}}"
+                                    ]
                                 },
                                 "method": "POST",
                                 "description": "The `random` command provides a random number to be used as a source of entropy for random number generation by clients.",
@@ -487,14 +403,10 @@
                             "name": "consensus_info",
                             "request": {
                                 "url": {
-                                    "raw": "https://s1.ripple.com:51234",
-                                    "protocol": "https",
+                                    "raw": "{{RIPPLED_JSONRPC_URL}}",
                                     "host": [
-                                        "s1",
-                                        "ripple",
-                                        "com"
-                                    ],
-                                    "port": "51234"
+                                        "{{RIPPLED_JSONRPC_URL}}"
+                                    ]
                                 },
                                 "method": "POST",
                                 "description": "The `consensus_info` command provides information about the [consensus process](https://xrpl.org/consensus.html) for debugging purposes.\n\n*The `consensus_info` method is an [admin method](https://xrpl.org/admin-rippled-methods.html) that cannot be run by unprivileged users.*",
@@ -508,14 +420,10 @@
                             "name": "feature",
                             "request": {
                                 "url": {
-                                    "raw": "https://s1.ripple.com:51234",
-                                    "protocol": "https",
+                                    "raw": "{{RIPPLED_JSONRPC_URL}}",
                                     "host": [
-                                        "s1",
-                                        "ripple",
-                                        "com"
-                                    ],
-                                    "port": "51234"
+                                        "{{RIPPLED_JSONRPC_URL}}"
+                                    ]
                                 },
                                 "method": "POST",
                                 "description": "The `feature` command returns information about [amendments](https://xrpl.org/amendments.html) this server knows about, including whether they are enabled and whether the server is voting in favor of those amendments in the [amendment process](https://xrpl.org/amendments.html#amendment-process).\n\nYou can use the `feature` command to configure the server to vote against or in favor of an amendment. This change persists even if you restart the server.\n\n*The `feature` method is an [admin method](https://xrpl.org/admin-rippled-methods.html) that cannot be run by unprivileged users.*",
@@ -529,14 +437,10 @@
                             "name": "fetch_info",
                             "request": {
                                 "url": {
-                                    "raw": "https://s1.ripple.com:51234",
-                                    "protocol": "https",
+                                    "raw": "{{RIPPLED_JSONRPC_URL}}",
                                     "host": [
-                                        "s1",
-                                        "ripple",
-                                        "com"
-                                    ],
-                                    "port": "51234"
+                                        "{{RIPPLED_JSONRPC_URL}}"
+                                    ]
                                 },
                                 "method": "POST",
                                 "description": "The `fetch_info` command returns information about objects that this server is currently fetching from the network, and how many peers have that information. It can also be used to reset current fetches.\n\n*The `fetch_info` method is an [admin method](https://xrpl.org/admin-rippled-methods.html) that cannot be run by unprivileged users.*",
@@ -550,14 +454,10 @@
                             "name": "get_counts",
                             "request": {
                                 "url": {
-                                    "raw": "https://s1.ripple.com:51234",
-                                    "protocol": "https",
+                                    "raw": "{{RIPPLED_JSONRPC_URL}}",
                                     "host": [
-                                        "s1",
-                                        "ripple",
-                                        "com"
-                                    ],
-                                    "port": "51234"
+                                        "{{RIPPLED_JSONRPC_URL}}"
+                                    ]
                                 },
                                 "method": "POST",
                                 "description": "The `get_counts` command provides various stats about the health of the server, mostly the number of objects of different types that it currently holds in memory.\n\n*The `get_counts` method is an [admin method](https://xrpl.org/admin-rippled-methods.html) that cannot be run by unprivileged users.*",
@@ -571,14 +471,10 @@
                             "name": "validator_info",
                             "request": {
                                 "url": {
-                                    "raw": "https://s1.ripple.com:51234",
-                                    "protocol": "https",
+                                    "raw": "{{RIPPLED_JSONRPC_URL}}",
                                     "host": [
-                                        "s1",
-                                        "ripple",
-                                        "com"
-                                    ],
-                                    "port": "51234"
+                                        "{{RIPPLED_JSONRPC_URL}}"
+                                    ]
                                 },
                                 "method": "POST",
                                 "description": "The `validator_info` method returns the current validator settings of the server, if it is configured as a validator.\n\n*The `validator_info` method is an [admin method](https://xrpl.org/admin-rippled-methods.html) that cannot be run by unprivileged users.*",
@@ -592,14 +488,10 @@
                             "name": "validator_list_sites",
                             "request": {
                                 "url": {
-                                    "raw": "https://s1.ripple.com:51234",
-                                    "protocol": "https",
+                                    "raw": "{{RIPPLED_JSONRPC_URL}}",
                                     "host": [
-                                        "s1",
-                                        "ripple",
-                                        "com"
-                                    ],
-                                    "port": "51234"
+                                        "{{RIPPLED_JSONRPC_URL}}"
+                                    ]
                                 },
                                 "method": "POST",
                                 "description": "The `validator_list_sites` command returns status information of sites serving validator lists.\n\n*The `validator_list_sites` method is an [admin method](https://xrpl.org/admin-rippled-methods.html) that cannot be run by unprivileged users!*",
@@ -613,14 +505,10 @@
                             "name": "validators",
                             "request": {
                                 "url": {
-                                    "raw": "https://s1.ripple.com:51234",
-                                    "protocol": "https",
+                                    "raw": "{{RIPPLED_JSONRPC_URL}}",
                                     "host": [
-                                        "s1",
-                                        "ripple",
-                                        "com"
-                                    ],
-                                    "port": "51234"
+                                        "{{RIPPLED_JSONRPC_URL}}"
+                                    ]
                                 },
                                 "method": "POST",
                                 "description": "The `validators` command returns human readable information about the current list of published and trusted validators used by the server.\n\n*The `validators` method is an [admin method](https://xrpl.org/admin-rippled-methods.html) that cannot be run by unprivileged users!*",
