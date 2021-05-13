@@ -2,6 +2,23 @@
 
 This package provides a Postman Collection to be used with the `rippled` XRP Ledger server.
 
+Example request bodies are used from [https://xrpl.org/rippled-api.html](https://xrpl.org/rippled-api.html).
+
+![](rippled_request_account_info.png)
+
+## Usage
+
+1. Load the [`rippled_postman_collection.json`](rippled_postman_collection.json) file into your Postman client.
+1. Set the environment variable `RIPPLED_JSONRPC_URL` to your `ripppled` server's address, e.g. `https://xrpl.ws/` for the XRP Ledger Foundation server.
+1. Navigate to your collection and try some APIs!
+
+## Status
+
+1. Many of the Public Read APIs hvae been implemented already
+1. Trasaction APIs still need to be completed
+1. Polymorphic APIs still need to be completed, e.g. `account_objects`, `ledger_entry`
+1. Admin APIs still need to be completed
+
 ## API Support
 
 - [ ] Public rippled Methods
