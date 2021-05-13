@@ -1,6 +1,6 @@
 # Rippled Postman Collection
 
-This package provides a Postman Collection to be used with the `rippled` XRP Ledger server.
+This project provides a Postman Collection to be used with the `rippled` XRP Ledger server's JSON RPC API.
 
 Example request bodies are used from [https://xrpl.org/rippled-api.html](https://xrpl.org/rippled-api.html).
 
