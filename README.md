@@ -43,7 +43,7 @@ This package provides a Postman Collection to be used with the `rippled` XRP Led
     - [x] `server_info` - Retrieve status of the server in human-readable format.
     - [x] `server_state` - Retrieve status of the server in machine-readable format.
   - [x] utility Methods
-    - [ ] ~`json` - Pass JSON through the commandline.~ (commandline only)
+    - ~[ ] `json` - Pass JSON through the commandline.~ (commandline only)
 	- [x] `ping` - Confirm connectivity with the server.
     - [x] `random` - Generate a random number.
 - [ ] Admin rippled Methods
@@ -73,7 +73,7 @@ This package provides a Postman Collection to be used with the `rippled` XRP Led
     - [x] `feature` - Get information about protocol amendments.
     - [x] `fetch_info` - Get information about the server's sync with the network.
     - [x] `get_counts` - Get statistics about the server's internals and memory usage.
-    - [ ] ~`print` - Get information about internal subsystems.~ (websocket and command line only)
+    - ~[ ] `print` - Get information about internal subsystems.~ (websocket and command line only)
     - [x] `validator_info` - Get the server's validation settings, if configured as a validator.
     - [x] `validator_list_sites` - Get information about sites that publish validator lists.
     - [x] `validators` - Get information about the current validators.
