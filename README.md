@@ -39,22 +39,22 @@ This project provides [a Postman Collection](rippled_postman_collection.json)  t
     - [x] `ledger_current` - Get the current working ledger version.
     - [x] `ledger_data` - Get the raw contents of a ledger version.
     - [ ] `ledger_entry` - Get one element from a ledger version.
-  - [ ] Transaction Methods
-    - [ ] `sign` - Cryptographically sign a transaction.
-    - [ ] `sign_for` - Contribute to a multi-signature.
-    - [ ] `submit` - Send a transaction to the network.
-    - [ ] `submit_multisigned` - Send a multi-signed transaction to the network.
-    - [ ] `transaction_entry` - Retrieve info about a transaction from a particular ledger version.
-    - [ ] `tx` - Retrieve info about a transaction from all the ledgers on hand.
-    - [ ] `tx_history` - Retrieve info about all recent transactions.
+  - [x] Transaction Methods
+    - [x] `sign` - Cryptographically sign a transaction.
+    - [x] `sign_for` - Contribute to a multi-signature.
+    - [x] `submit` - Send a transaction to the network.
+    - [x] `submit_multisigned` - Send a multi-signed transaction to the network.
+    - [x] `transaction_entry` - Retrieve info about a transaction from a particular ledger version.
+    - [x] `tx` - Retrieve info about a transaction from all the ledgers on hand.
+    - [x] `tx_history` - Retrieve info about all recent transactions.
   - [x] Path and Order Book Methods
     - [x] `book_offers` - Get info about offers to exchange two currencies.
     - [x] `deposit_authorized` - Check whether an account is authorized to send money directly to another.
-    - [ ] ~`path_find` - Find a path for a payment between two accounts and receive updates. (websocket only)~
+    - [ ] ~`path_find` - Find a path for a payment between two accounts and receive updates.~ (websocket only)
     - [x] `ripple_path_find` - Find a path for payment between two accounts, once.
-  - [ ] Payment Channel Methods
-    - [ ] `channel_authorize` - Sign a claim for money from a payment channel.
-    - [ ] `channel_verify` - Check a payment channel claim's signature.
+  - [x] Payment Channel Methods
+    - [x] `channel_authorize` - Sign a claim for money from a payment channel.
+    - [x] `channel_verify` - Check a payment channel claim's signature.
   - [x] Server Info Methods
     - [x] `fee` - Get information about transaction cost.
     - [x] `manifest` - Look up the public information about a known validator.

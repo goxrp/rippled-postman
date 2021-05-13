@@ -224,6 +224,130 @@
                     ]
                 },
                 {
+                    "name": "Transaction Methods",
+                    "item": [
+                        {
+                            "name": "sign",
+                            "request": {
+                                "url": {
+                                    "raw": "{{RIPPLED_JSONRPC_URL}}",
+                                    "host": [
+                                        "{{RIPPLED_JSONRPC_URL}}"
+                                    ]
+                                },
+                                "method": "POST",
+                                "description": "The `sign` method takes a [transaction in JSON format](https://xrpl.org/transaction-formats.html) and a [seed value](https://xrpl.org/cryptographic-keys.html), and returns a signed binary representation of the transaction. To contribute one signature to a [multi-signed transaction](https://xrpl.org/multi-signing.html), use the [`sign_for` method](https://xrpl.org/sign_for.html) instead.\n\nBy default, this method is [admin-only](https://xrpl.org/admin-rippled-methods.html). It can be used as a public method if the server has [enabled public signing](https://xrpl.org/enable-public-signing.html).",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n\t\"method\": \"sign\",\n\t\"params\": [\n\t\t{\n\t\t\t\"offline\": false,\n\t\t\t\"secret\": \"s████████████████████████████\",\n\t\t\t\"tx_json\": {\n\t\t\t\t\"Account\": \"rf1BiGeXwwQoi8Z2ueFYTEXSwuJYfV2Jpn\",\n\t\t\t\t\"Amount\": {\n\t\t\t\t\t\"currency\": \"USD\",\n\t\t\t\t\t\"issuer\": \"rf1BiGeXwwQoi8Z2ueFYTEXSwuJYfV2Jpn\",\n\t\t\t\t\t\"value\": \"1\"\n\t\t\t\t},\n\t\t\t\t\"Destination\": \"ra5nK24KXen9AHvsdFTKHSANinZseWnPcX\",\n\t\t\t\t\"TransactionType\": \"Payment\"\n\t\t\t},\n\t\t\t\"fee_mult_max\": 1000\n\t\t}\n\t]\n}"
+                                }
+                            }
+                        },
+                        {
+                            "name": "sign_for",
+                            "request": {
+                                "url": {
+                                    "raw": "{{RIPPLED_JSONRPC_URL}}",
+                                    "host": [
+                                        "{{RIPPLED_JSONRPC_URL}}"
+                                    ]
+                                },
+                                "method": "POST",
+                                "description": "The `sign_for` command provides one signature for a [multi-signed transaction](https://xrpl.org/multi-signing.html).\n\nBy default, this method is [admin-only](https://xrpl.org/admin-rippled-methods.html). It can be used as a public method if the server has [enabled public signing](https://xrpl.org/enable-public-signing.html).\n\nThis command requires the [MultiSign amendment](https://xrpl.org/known-amendments.html#multisign) to be enabled.",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n\t\"method\": \"sign_for\",\n\t\"params\": [\n\t\t{\n\t\t\t\"account\": \"rLFd1FzHMScFhLsXeaxStzv3UC97QHGAbM\",\n\t\t\t\"seed\": \"s████████████████████████████\",\n\t\t\t\"key_type\": \"ed25519\",\n\t\t\t\"tx_json\": {\n\t\t\t\t\"TransactionType\": \"TrustSet\",\n\t\t\t\t\"Account\": \"rEuLyBCvcw4CFmzv8RepSiAoNgF8tTGJQC\",\n\t\t\t\t\"Flags\": 262144,\n\t\t\t\t\"LimitAmount\": {\n\t\t\t\t\t\"currency\": \"USD\",\n\t\t\t\t\t\"issuer\": \"rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh\",\n\t\t\t\t\t\"value\": \"100\"\n\t\t\t\t},\n\t\t\t\t\"Sequence\": 2,\n\t\t\t\t\"SigningPubKey\": \"\",\n\t\t\t\t\"Fee\": \"30000\"\n\t\t\t}\n\t\t}\n\t]\n}"
+                                }
+                            }
+                        },
+                        {
+                            "name": "submit",
+                            "request": {
+                                "url": {
+                                    "raw": "{{RIPPLED_JSONRPC_URL}}",
+                                    "host": [
+                                        "{{RIPPLED_JSONRPC_URL}}"
+                                    ]
+                                },
+                                "method": "POST",
+                                "description": "The `submit` method applies a [transaction](https://xrpl.org/transaction-formats.html) and sends it to the network to be confirmed and included in future ledgers.\n\nThis command has two modes:\n\n* Submit-only mode takes a signed, serialized transaction as a binary blob, and submits it to the network as-is. Since signed transaction objects are immutable, no part of the transaction can be modified or automatically filled in after submission.\n* Sign-and-submit mode takes a JSON-formatted Transaction object, completes and signs the transaction in the same manner as the sign method, and then submits the signed transaction. We recommend only using this mode for testing and development.\n\nTo send a transaction as robustly as possible, you should construct and sign it in advance, persist it somewhere that you can access even after a power outage, then `submit` it as a `tx_blob`. After submission, monitor the network with the [`tx` method](https://xrpl.org/tx.html) command to see if the transaction was successfully applied; if a restart or other problem occurs, you can safely re-submit the `tx_blob` transaction: it won't be applied twice since it has the same sequence number as the old transaction.",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n\t\"method\": \"submit\",\n\t\"params\": [\n\t\t{\n\t\t\t\"tx_blob\": \"1200002280000000240000000361D4838D7EA4C6800000000000000000000000000055534400000000004B4E9C06F24296074F7BC48F92A97916C6DC5EA968400000000000000A732103AB40A0490F9B7ED8DF29D246BF2D6269820A0EE7742ACDD457BEA7C7D0931EDB74473045022100D184EB4AE5956FF600E7536EE459345C7BBCF097A84CC61A93B9AF7197EDB98702201CEA8009B7BEEBAA2AACC0359B41C427C1C5B550A4CA4B80CF2174AF2D6D5DCE81144B4E9C06F24296074F7BC48F92A97916C6DC5EA983143E9D4A2B8AA0780F682D136F7A56D6724EF53754\"\n\t\t}\n\t]\n}"
+                                }
+                            }
+                        },
+                        {
+                            "name": "submit_multisigned",
+                            "request": {
+                                "url": {
+                                    "raw": "{{RIPPLED_JSONRPC_URL}}",
+                                    "host": [
+                                        "{{RIPPLED_JSONRPC_URL}}"
+                                    ]
+                                },
+                                "method": "POST",
+                                "description": "The `submit_multisigned` command applies a [multi-signed](https://xrpl.org/multi-signing.html) transaction and sends it to the network to be included in future ledgers. (You can also submit multi-signed transactions in binary form using the [submit command in submit-only mode](https://xrpl.org/submit.html#submit-only-mode).)\n\nThis command requires the [MultiSign amendment](https://xrpl.org/known-amendments.html#multisign) to be enabled.",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n\t\"method\": \"submit_multisigned\",\n\t\"params\": [\n\t\t{\n\t\t\t\"tx_json\": {\n\t\t\t\t\"Account\": \"rEuLyBCvcw4CFmzv8RepSiAoNgF8tTGJQC\",\n\t\t\t\t\"Fee\": \"30000\",\n\t\t\t\t\"Flags\": 262144,\n\t\t\t\t\"LimitAmount\": {\n\t\t\t\t\t\"currency\": \"USD\",\n\t\t\t\t\t\"issuer\": \"rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh\",\n\t\t\t\t\t\"value\": \"0\"\n\t\t\t\t},\n\t\t\t\t\"Sequence\": 4,\n\t\t\t\t\"Signers\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"Signer\": {\n\t\t\t\t\t\t\t\"Account\": \"rsA2LpzuawewSBQXkiju3YQTMzW13pAAdW\",\n\t\t\t\t\t\t\t\"SigningPubKey\": \"02B3EC4E5DD96029A647CFA20DA07FE1F85296505552CCAC114087E66B46BD77DF\",\n\t\t\t\t\t\t\t\"TxnSignature\": \"3045022100CC9C56DF51251CB04BB047E5F3B5EF01A0F4A8A549D7A20A7402BF54BA744064022061EF8EF1BCCBF144F480B32508B1D10FD4271831D5303F920DE41C64671CB5B7\"\n\t\t\t\t\t\t}\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"Signer\": {\n\t\t\t\t\t\t\t\"Account\": \"raKEEVSGnKSD9Zyvxu4z6Pqpm4ABH8FS6n\",\n\t\t\t\t\t\t\t\"SigningPubKey\": \"03398A4EDAE8EE009A5879113EAA5BA15C7BB0F612A87F4103E793AC919BD1E3C1\",\n\t\t\t\t\t\t\t\"TxnSignature\": \"3045022100FEE8D8FA2D06CE49E9124567DCA265A21A9F5465F4A9279F075E4CE27E4430DE022042D5305777DA1A7801446780308897699412E4EDF0E1AEFDF3C8A0532BDE4D08\"\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t],\n\t\t\t\t\"SigningPubKey\": \"\",\n\t\t\t\t\"TransactionType\": \"TrustSet\",\n\t\t\t\t\"hash\": \"81A477E2A362D171BB16BE17B4120D9F809A327FA00242ABCA867283BEA2F4F8\"\n\t\t\t}\n\t\t}\n\t]\n}"
+                                }
+                            }
+                        },
+                        {
+                            "name": "transaction_entry",
+                            "request": {
+                                "url": {
+                                    "raw": "{{RIPPLED_JSONRPC_URL}}",
+                                    "host": [
+                                        "{{RIPPLED_JSONRPC_URL}}"
+                                    ]
+                                },
+                                "method": "POST",
+                                "description": "The `transaction_entry` method retrieves information on a single transaction from a specific ledger version. (The [`tx` method](https://xrpl.org/tx.html), by contrast, searches all ledgers for the specified transaction. We recommend using that method instead.)",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n\t\"method\": \"transaction_entry\",\n\t\"params\": [\n\t\t{\n\t\t\t\"tx_hash\": \"C53ECF838647FA5A4C780377025FEC7999AB4182590510CA461444B207AB74A9\",\n\t\t\t\"ledger_index\": 56865245\n\t\t}\n\t]\n}"
+                                }
+                            }
+                        },
+                        {
+                            "name": "tx",
+                            "request": {
+                                "url": {
+                                    "raw": "{{RIPPLED_JSONRPC_URL}}",
+                                    "host": [
+                                        "{{RIPPLED_JSONRPC_URL}}"
+                                    ]
+                                },
+                                "method": "POST",
+                                "description": "The `tx` method retrieves information on a single [transaction](https://xrpl.org/transaction-formats.html), by its [identifying hash](https://xrpl.org/transaction-basics.html#identifying-transactions).\n\nThis command may successfully find the transaction even if it is included in a ledger outside the range of `min_ledger` to `max_ledger`.",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n\t\"method\": \"tx\",\n\t\"params\": [\n\t\t{\n\t\t\t\"transaction\": \"C53ECF838647FA5A4C780377025FEC7999AB4182590510CA461444B207AB74A9\",\n\t\t\t\"binary\": false\n\t\t}\n\t]\n}"
+                                }
+                            }
+                        },
+                        {
+                            "name": "tx_history",
+                            "request": {
+                                "url": {
+                                    "raw": "{{RIPPLED_JSONRPC_URL}}",
+                                    "host": [
+                                        "{{RIPPLED_JSONRPC_URL}}"
+                                    ]
+                                },
+                                "method": "POST",
+                                "description": "The `tx_history` method retrieves some of the most recent transactions made.",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n\t\"method\": \"tx_history\",\n\t\"params\": [\n\t\t{\n\t\t\t\"start\": 0\n\t\t}\n\t]\n}"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
                     "name": "Path and Order Book Methods",
                     "item": [
                         {
@@ -274,6 +398,45 @@
                                 "body": {
                                     "mode": "raw",
                                     "raw": "{\n\t\"method\": \"ripple_path_find\",\n\t\"params\": [\n\t\t{\n\t\t\t\"destination_account\": \"r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59\",\n\t\t\t\"destination_amount\": {\n\t\t\t\t\"currency\": \"USD\",\n\t\t\t\t\"issuer\": \"rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B\",\n\t\t\t\t\"value\": \"0.001\"\n\t\t\t},\n\t\t\t\"source_account\": \"r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59\",\n\t\t\t\"source_currencies\": [\n\t\t\t\t{\n\t\t\t\t\t\"currency\": \"XRP\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"currency\": \"USD\"\n\t\t\t\t}\n\t\t\t]\n\t\t}\n\t]\n}"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Payment Channel Methods",
+                    "item": [
+                        {
+                            "name": "channel_authorize",
+                            "request": {
+                                "url": {
+                                    "raw": "{{RIPPLED_JSONRPC_URL}}",
+                                    "host": [
+                                        "{{RIPPLED_JSONRPC_URL}}"
+                                    ]
+                                },
+                                "method": "POST",
+                                "description": "The `channel_authorize` method creates a signature that can be used to redeem a specific amount of XRP from a payment channel.",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n\t\"method\": \"channel_authorize\",\n\t\"params\": [\n\t\t{\n\t\t\t\"channel_id\": \"5DB01B7FFED6B67E6B0414DED11E051D2EE2B7619CE0EAA6286D67A3A4D5BDB3\",\n\t\t\t\"seed\": \"s████████████████████████████\",\n\t\t\t\"key_type\": \"secp256k1\",\n\t\t\t\"amount\": \"1000000\"\n\t\t}\n\t]\n}"
+                                }
+                            }
+                        },
+                        {
+                            "name": "channel_verify",
+                            "request": {
+                                "url": {
+                                    "raw": "{{RIPPLED_JSONRPC_URL}}",
+                                    "host": [
+                                        "{{RIPPLED_JSONRPC_URL}}"
+                                    ]
+                                },
+                                "method": "POST",
+                                "description": "The `channel_verify` method checks the validity of a signature that can be used to redeem a specific amount of XRP from a payment channel.",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n\t\"method\": \"channel_verify\",\n\t\"params\": [\n\t\t{\n\t\t\t\"channel_id\": \"5DB01B7FFED6B67E6B0414DED11E051D2EE2B7619CE0EAA6286D67A3A4D5BDB3\",\n\t\t\t\"signature\": \"304402204EF0AFB78AC23ED1C472E74F4299C0C21F1B21D07EFC0A3838A420F76D783A400220154FB11B6F54320666E4C36CA7F686C16A3A0456800BBC43746F34AF50290064\",\n\t\t\t\"public_key\": \"aB44YfzW24VDEJQ2UuLPV2PvqcPCSoLnL7y5M1EzhdW4LnK5xMS3\",\n\t\t\t\"amount\": \"1000000\"\n\t\t}\n\t]\n}"
                                 }
                             }
                         }
